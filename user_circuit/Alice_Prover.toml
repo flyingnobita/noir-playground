@@ -1,0 +1,3 @@
+secret = "0x123"
+token_budget = "15"
+votes = [1, 2, 3]
