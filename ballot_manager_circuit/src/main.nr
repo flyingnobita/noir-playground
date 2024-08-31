@@ -10,7 +10,6 @@ fn main(
     all_votes: [u32; VOTER_COUNT * CANDIDATE_COUNT],
     secrets: [Field; VOTER_COUNT]
 ) -> pub [u32; CANDIDATE_COUNT] {
-
     // Check submitted commitments are consistent with the secrets to prevent
     // censorship or tampering
     check_commitments(commitments, secrets, all_votes);
@@ -49,10 +48,8 @@ fn check_commitments(
             let candidate_index = j;
             let vote_index = i * CANDIDATE_COUNT + j;
             transcript[candidate_index + 1] = all_votes[vote_index] as Field;
-        // }
+        }
 
         assert(commitments[i] == std::hash::pedersen_hash(transcript));
     }
-
-
 }
