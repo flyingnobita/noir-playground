@@ -12,11 +12,6 @@ fn main(token_budget: pub u32, votes: [u32; CANDIDATE_COUNT], secret: Field) -> 
     calculate_ballot_commitment(votes, secret)
 }
 
-// #[test]
-// fn test_main() {
-//     main();
-// }
-
 fn check_within_budget(token_budget: u32, votes: [u32; CANDIDATE_COUNT]) {
     let mut tokens_spent: u32 = 0;
 

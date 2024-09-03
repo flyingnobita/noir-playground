@@ -2,10 +2,10 @@
 
 ## How to Run
 
-### Use Noir version 0.30.0
+### Use Noir version 0.31.0
 
 ```bash
-noirup -v 0.30.0
+noirup -v 0.31.0
 ```
 
 ### Start Oracle RPC Server

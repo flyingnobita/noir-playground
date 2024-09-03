@@ -7,8 +7,11 @@ app.use(bodyParser.json());
 
 const server = new JSONRPCServer();
 
-server.addMethod("getSqrt", async (params) => {
-  const values = params[0].Array.map((field) => {
+server.addMethod("resolve_function_call", async (params) => {
+  if (params.function !== "getSqrt") {
+    throw Error("Unexpected foreign call");
+  }
+  const values = params.inputs[0].Array.map((field) => {
     return `${Math.sqrt(parseInt(field, 16))}`;
   });
   return { values: [{ Array: values }] };
